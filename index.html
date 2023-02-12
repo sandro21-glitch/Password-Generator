@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/adb29892fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Password Generator</title>
+</head>
+<body>
+
+    <!-- global -->
+    <div class="min-h-screen flex mx-auto items-center bg-bgColor p-5 font-jetBrains">
+        <!-- main content -->
+        <main class="mx-auto w-full max-w-[30rem]">
+            <!-- title -->
+            <h1 class="capitalize text-center text-2xl text-slate-500 font-bold mb-5">Password Generator</h1>
+            <!-- result container -->
+            <div class="w-full bg-boxCl p-7 flex justify-between mb-3">
+                <!-- password -->
+                <span id="passResult" class="txt text-2xl text-white font-semibold cursor-pointer">P4$5W0rD!</span>
+                <button id="copyPass">
+                    <img src="/images/icon-copy.svg" alt="copy" class="w-7"/>
+                </button>
+            </div>
+
+            <div class="w-full bg-boxCl p-7">
+               <!-- password length -->
+               <div class="flex flex-col mb-5">
+                <div class="flex items-center justify-between mb-5">
+                    <a class="text-md text-white font-bold">Character Length</a>
+                    <span id="passLength--number" class="text-4xl text-inpCl font-bold"></span>
+                </div>
+                <!-- slider -->
+                <input id="rangeInput" minlength="1" min="1" max="20" class="w-full accent-inpCl cursor-pointer" type="range"/>
+               </div>
+               <!-- checkboxes -->
+               <div class="flex flex-col mb-5">
+                <label for="upper" class="flex items-center mb-3">
+                    <input type="checkbox" id="upper" class="w-5 h-5 accent-inpCl ">
+                    <span class="ml-4 text-lg font-bold text-white">Include Uppercase Letters</span>
+                </label>
+                <label for="lower" class="flex items-center mb-3">
+                    <input type="checkbox" id="lower" class="w-5 h-5 accent-inpCl ">
+                    <span class="ml-4 text-lg font-bold text-white">Include Lowercase Letters</span>
+                </label>
+                <label for="number" class="flex items-center mb-3">
+                    <input type="checkbox" id="number" class="w-5 h-5 accent-inpCl ">
+                    <span class="ml-4 text-lg font-bold text-white">Include Numbers</span>
+                </label>
+                <label for="symbol" class="flex items-center mb-3">
+                    <input type="checkbox" id="symbol" class="w-5 h-5 accent-inpCl ">
+                    <span class="ml-4 text-lg font-bold text-white">Include Symbols</span>
+                </label>
+               </div>
+               <!-- strength calculator -->
+               <div class="flex items-center justify-between bg-slate-800 px-5 py-4 text-white mb-7">
+                <span class="text-xl text-slate-500 font-bold uppercase">Strength</span>
+                <!-- bars -->
+                <div class="flex items-center gap-2">
+                    <span class="mr-2 text-xl md:text-2xl font-bold text-white uppercase" id="stregth-calc"></span>
+                    <div class="border-2 w-[10px] h-7" id="too-weak"></div>
+                    <div class="border-2 w-[10px] h-7" id="weak"></div>
+                    <div class="border-2 w-[10px] h-7" id="medium"></div>
+                    <div class="border-2 w-[10px] h-7" id="strong"></div>
+                </div>
+               </div>
+               <!-- generate btn -->
+               <button class="w-full  bg-inpCl border-2 border-inpCl p-4 hover:bg-transparent
+               text-second font-bold hover:text-inpCl uppercase
+               transition-all ease-in flex items-center justify-center gap-5" id="generate">
+                        <span>Generate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
